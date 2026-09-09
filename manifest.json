@@ -1,0 +1,11 @@
+{
+  "name": "اذكر الله يذكرك",
+  "short_name": "اذكر الله",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f8f5",
+  "theme_color": "#0b6652",
+  "lang": "ar",
+  "dir": "rtl",
+  "description": "أذكار الصباح والمساء والسبحة الإلكترونية — صدقة عن صفوق الشمري وجميع المسلمين والمسلمات."
+}
