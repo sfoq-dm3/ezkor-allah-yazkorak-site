@@ -3,73 +3,96 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b6652">
+<meta name="theme-color" content="#061510">
 <meta name="description" content="اذكر الله يذكرك — أذكار الصباح والمساء والسبحة الإلكترونية. صدقة عن صفوق الشمري وجميع المسلمين والمسلمات الأحياء منهم والأموات.">
 <title>اذكر الله يذكرك</title>
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark">
+<div class="night-sky" aria-hidden="true"><span class="moon-glow"></span><span class="star s1">✦</span><span class="star s2">✧</span><span class="star s3">·</span><span class="star s4">✦</span></div>
+
 <div class="app-shell">
 <header class="topbar">
-  <button id="menuBtn" class="ghost icon" aria-label="القائمة">☰</button>
+  <button id="themeBtn" class="theme-toggle" aria-label="تبديل الوضع"><span>☾</span><small>ليلي</small></button>
   <a class="brand" href="#home" aria-label="الرئيسية">
-    <span class="brand-icon">۞</span>
+    <span class="brand-mark">۞</span>
     <span><b>اذكر الله يذكرك</b><small>رفيقك للذكر كل يوم</small></span>
   </a>
-  <button id="themeBtn" class="ghost icon" aria-label="الوضع الليلي">☾</button>
+  <button id="menuBtn" class="ghost icon" aria-label="القائمة">☰</button>
 </header>
 
 <div id="drawer" class="drawer">
-  <div class="drawer-head"><b>اذكر الله يذكرك</b><button id="closeDrawer">×</button></div>
-  <button data-nav="home">⌂ الرئيسية</button>
-  <button data-nav="morning">🌅 أذكار الصباح</button>
-  <button data-nav="evening">🌙 أذكار المساء</button>
-  <button data-nav="tasbeeh">📿 السبحة الإلكترونية</button>
-  <button data-nav="favorites">♡ المفضلة</button>
-  <div class="drawer-note">اللهم اجعل هذا العمل خالصًا لوجهك الكريم.</div>
+  <div class="drawer-head"><div><b>اذكر الله يذكرك</b><small>رحلة هادئة مع الذكر</small></div><button id="closeDrawer">×</button></div>
+  <button data-nav="home">⌂ <span>الرئيسية</span></button>
+  <button data-nav="morning">☀️ <span>أذكار الصباح</span></button>
+  <button data-nav="evening">🌙 <span>أذكار المساء</span></button>
+  <button data-nav="tasbeeh">📿 <span>السبحة الإلكترونية</span></button>
+  <button data-nav="favorites">♡ <span>المفضلة</span></button>
+  <div class="drawer-note">اللهم اجعل هذا العمل خالصًا لوجهك الكريم، وانفع به كل من يذكر الله.</div>
 </div>
 <div id="overlay" class="overlay"></div>
 
 <main>
 <section id="home" class="page active">
   <section class="hero">
-    <div class="stars">✦　·　✧　·　✦</div>
-    <span class="pill">بسم الله الرحمن الرحيم</span>
+    <div class="mosque-line" aria-hidden="true">☾　♢　♢　♢　☽</div>
+    <span class="bismillah">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ</span>
     <h1>وَاذْكُر رَّبَّكَ كَثِيرًا</h1>
-    <p>طمأنينةٌ للقلب، ونورٌ للوقت، وذكرٌ لا ينقطع.</p>
-    <div class="verse">﴿ فَاذْكُرُونِي أَذْكُرْكُمْ ﴾</div>
+    <p>طمأنينة للقلب.. ونور للوقت.. وذكر لا ينقطع</p>
+    <div class="hero-verse">﴿ فَاذْكُرُونِي أَذْكُرْكُمْ ﴾</div>
+    <small class="verse-ref">البقرة: ١٥٢</small>
   </section>
 
   <section class="dedication">
-    <span>🤍</span>
+    <div class="ded-icon">♡</div>
     <div><b>صدقة جارية</b><p>عن <strong>صفوق الشمري</strong> وجميع المسلمين والمسلمات، الأحياء منهم والأموات.</p></div>
+    <span class="leaf">❧</span>
   </section>
 
-  <div class="section-title"><div><span>اختصر طريقك للذكر</span><small>اختر ما تريد الآن</small></div></div>
+  <div class="section-title">
+    <div><span>اختر طريقك للذكر</span><small>كل ذكر.. راحة لقلبك</small></div>
+    <span class="title-line"></span>
+  </div>
+
   <section class="quick-grid">
-    <button class="quick sunrise" data-nav="morning"><span>🌅</span><b>أذكار الصباح</b><small>ابدأ يومك بذكر الله</small><i>←</i></button>
-    <button class="quick moon" data-nav="evening"><span>🌙</span><b>أذكار المساء</b><small>اختم يومك مطمئنًا</small><i>←</i></button>
-    <button class="quick beads" data-nav="tasbeeh"><span>📿</span><b>السبحة الإلكترونية</b><small>سبّح واحفظ عدّك</small><i>←</i></button>
-    <button class="quick heart" data-nav="favorites"><span>♡</span><b>مفضلتي</b><small id="favCountHome">أذكارك المحفوظة</small><i>←</i></button>
+    <button class="quick sunrise" data-nav="morning">
+      <span class="quick-icon">☀</span><b>أذكار الصباح</b><small>ابدأ يومك بذكر الله</small><i>←</i>
+    </button>
+    <button class="quick moon" data-nav="evening">
+      <span class="quick-icon">☾</span><b>أذكار المساء</b><small>اختم يومك مطمئنًا</small><i>←</i>
+    </button>
+    <button class="quick beads" data-nav="tasbeeh">
+      <span class="quick-icon">📿</span><b>مسبحة رقمية</b><small>سبّح في أي وقت</small><i>←</i>
+    </button>
+    <button class="quick heart" data-nav="favorites">
+      <span class="quick-icon">♡</span><b>أذكاري المفضلة</b><small id="favCountHome">أذكارك المحفوظة</small><i>←</i>
+    </button>
+  </section>
+
+  <section class="quote-card">
+    <span>❝</span>
+    <p>الذين يذكرون الله قيامًا وقعودًا وعلى جنوبهم ويتفكرون في خلق السماوات والأرض</p>
+    <small>آل عمران: ١٩١</small>
   </section>
 
   <section class="daily-card">
-    <div><span class="mini-icon">✨</span><div><b>ورد اليوم</b><small>«لا يزال لسانك رطبًا من ذكر الله»</small></div></div>
+    <div class="daily-icon">✦</div>
+    <div><b>وردك اليوم</b><small>اجعل لسانك عامرًا بذكر الله</small></div>
     <button data-nav="tasbeeh">ابدأ الذكر</button>
   </section>
 </section>
 
 <section id="morning" class="page">
-  <div class="page-head"><div><span class="page-icon">🌅</span><div><h2>أذكار الصباح</h2><p>من بعد الفجر إلى طلوع الشمس، ويمتد وقتها.</p></div></div><button class="soft-btn" data-nav="home">الرئيسية</button></div>
-  <div class="toolbar"><label>🔎 <input id="morningSearch" placeholder="ابحث في أذكار الصباح"></label><span id="morningProgress">0 / 0</span></div>
+  <div class="page-head"><div><span class="page-icon">☀</span><div><h2>أذكار الصباح</h2><p>ابدأ يومك بذكر الله وطمأنينة القلب.</p></div></div><button class="soft-btn" data-nav="home">الرئيسية</button></div>
+  <div class="toolbar"><label>⌕ <input id="morningSearch" placeholder="ابحث في أذكار الصباح"></label><span id="morningProgress">0 / 0</span></div>
   <div id="morningList" class="zikr-list"></div>
 </section>
 
 <section id="evening" class="page">
-  <div class="page-head"><div><span class="page-icon">🌙</span><div><h2>أذكار المساء</h2><p>ابدأها من بعد العصر أو عند المساء.</p></div></div><button class="soft-btn" data-nav="home">الرئيسية</button></div>
-  <div class="toolbar"><label>🔎 <input id="eveningSearch" placeholder="ابحث في أذكار المساء"></label><span id="eveningProgress">0 / 0</span></div>
+  <div class="page-head"><div><span class="page-icon">☾</span><div><h2>أذكار المساء</h2><p>اختم يومك بذكر الله وراحة النفس.</p></div></div><button class="soft-btn" data-nav="home">الرئيسية</button></div>
+  <div class="toolbar"><label>⌕ <input id="eveningSearch" placeholder="ابحث في أذكار المساء"></label><span id="eveningProgress">0 / 0</span></div>
   <div id="eveningList" class="zikr-list"></div>
 </section>
 
@@ -102,7 +125,7 @@
 </main>
 
 <footer>
-  <div class="footer-logo">۞</div>
+  <div class="footer-mark">۞</div>
   <b>اذكر الله يذكرك</b>
   <p>صدقة عن صفوق الشمري وجميع المسلمين والمسلمات، الأحياء منهم والأموات.</p>
   <small>اللهم تقبلها واجعلها خالصة لوجهك الكريم.</small>

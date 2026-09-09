@@ -66,8 +66,8 @@ const drawer=document.getElementById("drawer"),overlay=document.getElementById("
 function openDrawer(){drawer.classList.add("open");overlay.classList.add("show")}function closeDrawer(){drawer.classList.remove("open");overlay.classList.remove("show")}
 document.getElementById("menuBtn").onclick=openDrawer;document.getElementById("closeDrawer").onclick=closeDrawer;overlay.onclick=closeDrawer;
 
-if(localStorage.getItem("theme")==="dark")document.body.classList.add("dark");
-document.getElementById("themeBtn").onclick=()=>{document.body.classList.toggle("dark");localStorage.setItem("theme",document.body.classList.contains("dark")?"dark":"light")};
+if(localStorage.getItem("theme")!=="light")document.body.classList.add("dark");
+document.getElementById("themeBtn").onclick=()=>{document.body.classList.toggle("dark");localStorage.setItem("theme",document.body.classList.contains("dark")?"dark":"light"); document.getElementById("themeBtn").querySelector("small").textContent=document.body.classList.contains("dark")?"ليلي":"نهاري"};
 
 let tasbeehName=localStorage.getItem("tasbeehName")||"سبحان الله";
 let tasbeehCount=+(localStorage.getItem("tasbeehCount")||0);
@@ -85,4 +85,4 @@ document.getElementById("plusOneBtn").onclick=()=>{tasbeehCount++;updateTasbeeh(
 document.getElementById("resetBtn").onclick=()=>{tasbeehCount=0;updateTasbeeh()};
 goalSelect.onchange=()=>{goal=+goalSelect.value;updateTasbeeh()};
 
-renderAll();updateTasbeeh();
+renderAll();updateTasbeeh(); document.getElementById("themeBtn").querySelector("small").textContent=document.body.classList.contains("dark")?"ليلي":"نهاري";
